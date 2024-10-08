@@ -1,7 +1,12 @@
 
 let userWins = 0; // Initialize user wins
-        let computerWins = 0; // Initialize computer wins
-        let draws = 0; // Initialize draws
+let computerWins = 0; // Initialize computer wins
+let draws = 0; // Initialize draws
+
+function startGame() {
+    // Redirect to the play page
+    window.location.href = 'play.html';
+}
 
 
 // Function to get the computer's choice
@@ -19,45 +24,57 @@ function getComputerChoice() {
 }
 
 // Function to determine the result of the game
-function Results(userChoice) {
+function playGame(userChoice) {
     const computerChoice = getComputerChoice(); // Get the computer's choice
-    console.log("Computer's choice: " + computerChoice); // Show the computer's choice
+    console.log("Computer's choice: " + computerChoice); // Show the computer's choice in the console
 
+    // Update the displayed computer's choice in the HTML
+    document.getElementById('computerChoice').textContent = computerChoice;
+
+    // Determine the outcome of the game
     if (userChoice === computerChoice) {
         draws++;
-        return "It's a Draw!";
-    }
-
-    // Check if the computer wins
-    if (
+        alert("It's a Draw!");
+    } else if (
         (computerChoice === "rock" && userChoice === "scissors") ||
         (computerChoice === "paper" && userChoice === "rock") ||
         (computerChoice === "scissors" && userChoice === "paper")
     ) {
         computerWins++;
-        return "Computer Wins!";
+        alert("Computer Wins!");
     } else {
         userWins++;
-        return "You Win!";
+        alert("You Win!");
     }
+
+    // Update the scoreboard after each round
+    updateScoreboard();
 }
 
-let playAgain = true; // Flag to control the loop
+function updateScoreboard() {
+    // Update the scoreboard with the current score values
+    document.getElementById('userWins').textContent = userWins;
+    document.getElementById('computerWins').textContent = computerWins;
+    document.getElementById('draws').textContent = draws;
+}
 
-while (playAgain) {
-    const input = prompt("Choose: rock, paper, or scissors:");
-    if (input) {
-        const result = Results(input.trim().toLowerCase()); // Call the game logic with user input
-        alert(result); // Show the result in an alert box
-    } else {
-        alert("No choice made.");
-    }
+document.querySelector('.rock').addEventListener('click', function() {
+    playGame('rock');
+});
+
+document.querySelector('.paper').addEventListener('click', function() {
+    playGame('paper');
+});
+
+document.querySelector('.scissors').addEventListener('click', function() {
+    playGame('scissors');
+});
+
+
+function showScoreboard() {
     alert(`Scoreboard:\nYou: ${userWins}\nComputer: ${computerWins}\nDraws: ${draws}`);
-
-
-    // Ask if the user wants to play again
-    const playAgainResponse = prompt("Do you want to play again? (yes/no)");
-    playAgain = playAgainResponse && playAgainResponse.trim().toLowerCase() === "yes";
 }
 
-alert("Thanks for playing!"); // Goodbye message
+// Attach event listeners to buttons
+//document.querySelector('.playRound').addEventListener('click', Results);
+document.querySelector('.ScoreBoard').addEventListener('click', showScoreboard);

@@ -1,0 +1,101 @@
+body{
+    height: 100vh;
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: beige;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container button {
+    margin: 10px; /* Add space between buttons */
+    padding: 10px 20px;
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: rgb(132, 132, 196);
+    color: rgb(255, 255, 255);
+    border: 5px solid black;
+    cursor: pointer;
+}
+
+.container button:hover{
+    background-color:rgb(255, 255, 255);
+    color: rgb(132, 132, 196);
+    
+}
+
+
+
+/* PLAY*/
+/* Styles for the body */
+#play {
+    background-color: rgb(132, 132, 196);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;  /* Stack elements vertically */
+}
+
+/* Styles for the body */
+#play {
+    background-color: rgb(132, 132, 196);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: center; /* Center elements horizontally */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+/* Styles for the scoreboard */
+#scoreboard {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px; /* Space between scoreboard and buttons */
+    background-color: #f3f3f3;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Give scoreboard some width */
+}
+
+/* Styling for scoreboard paragraphs */
+#scoreboard p {
+    margin: 5px 0; /* Space between paragraphs */
+    font-weight: bold; /* Make text bold */
+}
+
+/* Centering the buttons in a single line */
+.container-play {
+    display: flex; /* Use flexbox for button layout */
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Align buttons vertically */
+    width: 100%; /* Full width to prevent wrapping */
+    margin-bottom: 20px; /* Space between buttons and computer choice */
+}
+
+/* Styling the image buttons */
+input[type="image"] {
+    width: 150px; /* Set button width */
+    height: 150px; /* Set button height */
+    margin: 0 10px; /* Horizontal margin between buttons */
+}
+
+/* Style for displaying computer's choice */
+#computerChoice {
+    font-size: 24px; /* Increase font size as needed */
+    margin-top: 10px; /* Space above computer choice text */
+    font-weight: bold; /* Optional: make the text bold for emphasis */
+}
+
+
